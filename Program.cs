@@ -104,7 +104,7 @@
 // }
 
 
-// // Task 1 Practice 2
+// Task 1 Practice 2
 internal class Program5
 {
     private static void Main(string[] args)
@@ -118,7 +118,7 @@ internal class Program5
 }
 
 
-// // Task 2 Practice 2
+// Task 2 Practice 2
 internal class Program6
 {
     private static void Main(string[] args)
