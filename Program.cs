@@ -184,92 +184,179 @@
 // }
 
 
-// Task 1 Practice 3
-internal class Program7 {  
-    private static void Main(string[] args) {  
-        int num, rem, sum = 0, temp;  
+// // Task 1 Practice 3
+// internal class Program7 {  
+//     private static void Main(string[] args) {  
+//         int num, rem, sum = 0, temp;  
 
-        Console.WriteLine("\n >>>> To Find a Number is Palindrome or not <<<< ");  
-        Console.Write("\n Enter a number: ");  
-        num = Convert.ToInt32(Console.ReadLine());  
-        temp = num;  
-        while (num > 0) {  
-            rem = num % 10; // get remainder by dividing with 10    
-            num = num / 10; // get quotient by dividing with 10    
-            sum = sum * 10 + rem;  
+//         Console.WriteLine("\n >>>> To Find a Number is Palindrome or not <<<< ");  
+//         Console.Write("\n Enter a number: ");  
+//         num = Convert.ToInt32(Console.ReadLine());  
+//         temp = num;  
+//         while (num > 0) {  
+//             rem = num % 10; // get remainder by dividing with 10    
+//             num = num / 10; // get quotient by dividing with 10    
+//             sum = sum * 10 + rem;  
 
-        }  
-        Console.WriteLine("\n The Reversed Number is: {0} \n", sum);  
-        if (temp == sum) // check whether the reversed number is equal to entered number    
-        {  
-            Console.WriteLine("\n Number is Palindrome \n\n");  
-        } else {  
-            Console.WriteLine("\n Number is not a palindrome \n\n");  
-        }  
-    }  
-}  
+//         }  
+//         Console.WriteLine("\n The Reversed Number is: {0} \n", sum);  
+//         if (temp == sum) // check whether the reversed number is equal to entered number    
+//         {  
+//             Console.WriteLine("\n Number is Palindrome \n\n");  
+//         } else {  
+//             Console.WriteLine("\n Number is not a palindrome \n\n");  
+//         }  
+//     }  
+// }  
 
 
-// Task 2 Practice 3  
-internal class Program8
-{
-    private static void Main(string[] args)
-    {
-        // function 
-        static void distance(int x1, int y1,
-                             int z1, int x2,
-                             int y2, int z2)
+// // Task 2 Practice 3  
+// internal class Program8
+// {
+//     private static void Main(string[] args)
+//     {
+//         // function 
+//         static void distance(int x1, int y1,
+//                              int z1, int x2,
+//                              int y2, int z2)
+//         {
+//             double d = Math.Pow(Math.Pow(x2 - x1, 2) +
+//                                 Math.Pow(y2 - y1, 2) +
+//                                 Math.Pow(z2 - z1, 2) *
+//                                            1.0, 0.5);
+//             Console.WriteLine("Distance is \n" + d);
+//             return;
+//         }
+
+//         // driver code
+//         {
+
+//             Console.Write("x1: ");
+//             int x1 = int.Parse(Console.ReadLine());
+//             Console.Write("y1: ");
+//             int y1 = int.Parse(Console.ReadLine());
+//             Console.Write("z1: ");
+//             int z1 = int.Parse(Console.ReadLine());
+
+//             Console.Write("x2: ");
+//             int x2 = int.Parse(Console.ReadLine());
+//             Console.Write("y2: ");
+//             int y2 = int.Parse(Console.ReadLine());
+//             Console.Write("z2: ");
+//             int z2 = int.Parse(Console.ReadLine());
+
+//             // function call
+//             distance(x1, y1, z1,
+//                      x2, y2, z2);
+//         }
+//     }
+// }
+
+
+// // Task 3 Practice 3  
+// internal class Program9 {  
+//     private static void Main(string[] args)   
+//     {
+//         int i, n;
+
+// 	    Console.Write("\n\n");
+//         Console.Write("Calculate n terms of cube natural number:\n");
+//         Console.Write("----------------------------------------------");
+//         Console.Write("\n\n");     
+
+//         Console.Write("Input the number of terms: ");
+//         n = Convert.ToInt32(Console.ReadLine());     
+//         Console.Write("\nThe cube natural up to {0} terms are: ", n);
+//         for(i = 1; i <= n; i++)
+//         {
+//             Console.Write("{0}  ", i*i*i);
+//         }
+//     } 
+// }
+
+
+// Task 1 Practice 4
+internal class Program10 {  
+    private static void Main(string[] args)  
+    {       
+        
+        Console.Write("Enter a base: "); 
+        int i = int.Parse(Console.ReadLine()); 
+
+        Console.Write("Enter an exp: "); 
+        int n = int.Parse(Console.ReadLine()); 
+
+        decimal y = 1;
+        if (n > 0)
         {
-            double d = Math.Pow(Math.Pow(x2 - x1, 2) +
-                                Math.Pow(y2 - y1, 2) +
-                                Math.Pow(z2 - z1, 2) *
-                                           1.0, 0.5);
-            Console.WriteLine("Distance is \n" + d);
-            return;
+            for (int x = 1; x <= n; x++)
+                y *= i;               
         }
-
-        // driver code
+        if (n < 0)
         {
-
-            Console.Write("x1: ");
-            int x1 = int.Parse(Console.ReadLine());
-            Console.Write("y1: ");
-            int y1 = int.Parse(Console.ReadLine());
-            Console.Write("z1: ");
-            int z1 = int.Parse(Console.ReadLine());
-
-            Console.Write("x2: ");
-            int x2 = int.Parse(Console.ReadLine());
-            Console.Write("y2: ");
-            int y2 = int.Parse(Console.ReadLine());
-            Console.Write("z2: ");
-            int z2 = int.Parse(Console.ReadLine());
-
-            // function call
-            distance(x1, y1, z1,
-                     x2, y2, z2);
+            for (int x = -1; x >= n; x--)
+                y /= i;
         }
+        Console.WriteLine("Result: " + y);
     }
 }
 
 
-// Task 3 Practice 3  
-internal class Program9 {  
-    private static void Main(string[] args)   
+// Task 2 Practice 4                   
+internal class Program11 { 
+      
+    private static void Main(string[] args) 
+    {  
+        int n, sum = 0, m;         
+        Console.Write("Enter a number: ");      
+        n = int.Parse(Console.ReadLine());     
+        while(n > 0)      
+        {      
+            m = n % 10;      
+            sum = sum + m;      
+            n = n / 10;      
+        } 
+
+        Console.Write("Sum of digits: " + sum);       
+    }  
+}  
+
+
+// Task 3 Practice 4
+    class Program12
     {
-        int i, n;
-
-	    Console.Write("\n\n");
-        Console.Write("Calculate n terms of cube natural number:\n");
-        Console.Write("----------------------------------------------");
-        Console.Write("\n\n");     
-
-        Console.Write("Input the number of terms: ");
-        n = Convert.ToInt32(Console.ReadLine());     
-        Console.Write("\nThe cube natural up to {0} terms are: ", n);
-        for(i = 1; i <= n; i++)
+        static void Main(string[] args)
         {
-            Console.Write("{0}  ", i*i*i);
-        }
-    } 
-}
+            int i;
+            int[] arr = new int[8]; // 8 size array
+ 
+            // accepting value from input
+            for (i = 0; i < 8; i++)
+            {
+                Console.Write("Enter a number: ");
+                // store value in an array
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+
+            }
+            Console.WriteLine("\n");
+            
+            // print the value on console
+            for (i = 0; i < 8; i++)
+            {
+                {  
+                    int sum = 0, m;   
+  
+                    while(arr[i] > 0)      
+                        {      
+                            m = arr[i] % 10;      
+                            sum = sum + m;      
+                            arr[i] = arr[i] / 10;      
+                        } 
+
+                    Console.Write("Sum of digits: " + sum);
+                    Console.Write("\n");        
+
+                }
+            }
+        }        
+    }
