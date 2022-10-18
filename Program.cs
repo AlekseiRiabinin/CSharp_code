@@ -275,88 +275,176 @@
 // }
 
 
-// Task 1 Practice 4
-internal class Program10 {  
-    private static void Main(string[] args)  
-    {       
+// // Task 1 Practice 4
+// internal class Program10 {  
+//     private static void Main(string[] args)  
+//     {       
         
-        Console.Write("Enter a base: "); 
-        int i = int.Parse(Console.ReadLine()); 
+//         Console.Write("Enter a base: "); 
+//         int i = int.Parse(Console.ReadLine()); 
 
-        Console.Write("Enter an exp: "); 
-        int n = int.Parse(Console.ReadLine()); 
+//         Console.Write("Enter an exp: "); 
+//         int n = int.Parse(Console.ReadLine()); 
 
-        decimal y = 1;
-        if (n > 0)
+//         decimal y = 1;
+//         if (n > 0)
+//         {
+//             for (int x = 1; x <= n; x++)
+//                 y *= i;               
+//         }
+//         if (n < 0)
+//         {
+//             for (int x = -1; x >= n; x--)
+//                 y /= i;
+//         }
+//         Console.WriteLine("Result: " + y);
+//     }
+// }
+
+
+// // Task 2 Practice 4                   
+// internal class Program11 { 
+      
+//     private static void Main(string[] args) 
+//     {  
+//         int n, sum = 0, m;         
+//         Console.Write("Enter a number: ");      
+//         n = int.Parse(Console.ReadLine());     
+//         while(n > 0)      
+//         {      
+//             m = n % 10;      
+//             sum = sum + m;      
+//             n = n / 10;      
+//         } 
+
+//         Console.Write("Sum of digits: " + sum);       
+//     }  
+// }  
+
+
+// // Task 3 Practice 4
+//     class Program12
+//     {
+//         static void Main(string[] args)
+//         {
+//             int i;
+//             int[] arr = new int[8]; // 8 size array
+ 
+//             // accepting value from input
+//             for (i = 0; i < 8; i++)
+//             {
+//                 Console.Write("Enter a number: ");
+//                 // store value in an array
+//                 arr[i] = Convert.ToInt32(Console.ReadLine());
+
+//             }
+//             Console.WriteLine("\n");
+            
+//             // print the value on console
+//             for (i = 0; i < 8; i++)
+//             {
+//                 {  
+//                     int sum = 0, m;   
+  
+//                     while(arr[i] > 0)      
+//                         {      
+//                             m = arr[i] % 10;      
+//                             sum = sum + m;      
+//                             arr[i] = arr[i] / 10;      
+//                         } 
+
+//                     Console.Write("Sum of digits: " + sum);
+//                     Console.Write("\n");        
+
+//                 }
+//             }
+//         }        
+//     }
+
+
+// Task 1 Practice 5  
+   class Program13
+    {       
+        static void Main(string[] args)
+        {                
+             int i;
+             int[] arr = new int[4]; // 4 size array
+ 
+             // accepting value from input
+             for (i = 0; i < 4; i++)
+             {
+                 Console.Write("Enter a number: ");
+                 // store value in an array
+                 arr[i] = Convert.ToInt32(Console.ReadLine());
+             }
+
+            Console.WriteLine(test(arr)); 
+        }           
+        static int test(int[] nums)
         {
-            for (int x = 1; x <= n; x++)
-                y *= i;               
-        }
-        if (n < 0)
+            int evens = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] % 2 == 0) evens++;
+            }
+            return evens;
+        }    
+   }
+
+
+// Task 2 Practice 5  
+public class Program14 {
+     
+    public static void Main()
+    {
+        int i;
+        int[] arr = new int[4]; // 4 size array
+ 
+        // accepting value from input
+        for (i = 0; i < 4; i++)
         {
-            for (int x = -1; x >= n; x--)
-                y /= i;
+            Console.Write("Enter a number: ");
+            // store value in an array
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }       
+
+        int even = 0, odd = 0;
+ 
+        // loop to find even, odd sum
+        for (int j = 0; j < arr.Length; j++)
+        {
+            if (j % 2 == 0)
+                even += arr[j];
+            else
+                odd += arr[j];
         }
-        Console.WriteLine("Result: " + y);
+ 
+        Console.WriteLine("Even index positions" + " sum: " + even);                            
+        Console.WriteLine("Odd index positions " + "sum: " + odd);
     }
 }
 
 
-// Task 2 Practice 4                   
-internal class Program11 { 
-      
-    private static void Main(string[] args) 
-    {  
-        int n, sum = 0, m;         
-        Console.Write("Enter a number: ");      
-        n = int.Parse(Console.ReadLine());     
-        while(n > 0)      
-        {      
-            m = n % 10;      
-            sum = sum + m;      
-            n = n / 10;      
-        } 
+// Task 3 Practice 5  
+public class Program15 {
 
-        Console.Write("Sum of digits: " + sum);       
-    }  
-}  
-
-
-// Task 3 Practice 4
-    class Program12
+    public static void Main()
     {
-        static void Main(string[] args)
-        {
-            int i;
-            int[] arr = new int[8]; // 8 size array
+        int i;
+        int[] arr = new int[4]; // 4 size array
  
-            // accepting value from input
-            for (i = 0; i < 8; i++)
-            {
-                Console.Write("Enter a number: ");
-                // store value in an array
-                arr[i] = Convert.ToInt32(Console.ReadLine());
-
-            }
-            Console.WriteLine("\n");
-            
-            // print the value on console
-            for (i = 0; i < 8; i++)
-            {
-                {  
-                    int sum = 0, m;   
-  
-                    while(arr[i] > 0)      
-                        {      
-                            m = arr[i] % 10;      
-                            sum = sum + m;      
-                            arr[i] = arr[i] / 10;      
-                        } 
-
-                    Console.Write("Sum of digits: " + sum);
-                    Console.Write("\n");        
-
-                }
-            }
-        }        
+        // accepting value from input
+        for (i = 0; i < 4; i++)
+        {
+            Console.Write("Enter a number: ");
+            // store value in an array
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }  
+ 
+        Console.WriteLine("----------------");
+        Console.WriteLine("Minimum number: " + arr.Min());
+        Console.WriteLine("Maximum number: " + arr.Max());
+        Console.WriteLine("Difference between Max and Min: " + (arr.Max() - arr.Min()));
     }
+}
