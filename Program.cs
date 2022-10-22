@@ -363,88 +363,208 @@
 
 
 // Task 1 Practice 5  
-   class Program13
-    {       
-        static void Main(string[] args)
-        {                
-             int i;
-             int[] arr = new int[4]; // 4 size array
+//    class Program13
+//     {       
+//         static void Main(string[] args)
+//         {                
+//              int i;
+//              int[] arr = new int[4]; // 4 size array
  
-             // accepting value from input
-             for (i = 0; i < 4; i++)
-             {
-                 Console.Write("Enter a number: ");
-                 // store value in an array
-                 arr[i] = Convert.ToInt32(Console.ReadLine());
-             }
+//              // accepting value from input
+//              for (i = 0; i < 4; i++)
+//              {
+//                  Console.Write("Enter a number: ");
+//                  // store value in an array
+//                  arr[i] = Convert.ToInt32(Console.ReadLine());
+//              }
 
-            Console.WriteLine(test(arr)); 
-        }           
-        static int test(int[] nums)
-        {
-            int evens = 0;
+//             Console.WriteLine(test(arr)); 
+//         }           
+//         static int test(int[] nums)
+//         {
+//             int evens = 0;
 
-            for (int i = 0; i < nums.Length; i++)
-            {
-                if (nums[i] % 2 == 0) evens++;
-            }
-            return evens;
-        }    
-   }
+//             for (int i = 0; i < nums.Length; i++)
+//             {
+//                 if (nums[i] % 2 == 0) evens++;
+//             }
+//             return evens;
+//         }    
+//    }
 
 
-// Task 2 Practice 5  
-public class Program14 {
+// // Task 2 Practice 5  
+// public class Program14 {
      
-    public static void Main()
-    {
-        int i;
-        int[] arr = new int[4]; // 4 size array
+//     public static void Main()
+//     {
+//         int i;
+//         int[] arr = new int[4]; // 4 size array
  
-        // accepting value from input
-        for (i = 0; i < 4; i++)
-        {
-            Console.Write("Enter a number: ");
-            // store value in an array
-            arr[i] = Convert.ToInt32(Console.ReadLine());
-        }       
+//         // accepting value from input
+//         for (i = 0; i < 4; i++)
+//         {
+//             Console.Write("Enter a number: ");
+//             // store value in an array
+//             arr[i] = Convert.ToInt32(Console.ReadLine());
+//         }       
 
-        int even = 0, odd = 0;
+//         int even = 0, odd = 0;
  
-        // loop to find even, odd sum
-        for (int j = 0; j < arr.Length; j++)
+//         // loop to find even, odd sum
+//         for (int j = 0; j < arr.Length; j++)
+//         {
+//             if (j % 2 == 0)
+//                 even += arr[j];
+//             else
+//                 odd += arr[j];
+//         }
+ 
+//         Console.WriteLine("Even index positions" + " sum: " + even);                            
+//         Console.WriteLine("Odd index positions " + "sum: " + odd);
+//     }
+// }
+
+
+// // Task 3 Practice 5  
+// public class Program15 {
+
+//     public static void Main()
+//     {
+//         int i;
+//         int[] arr = new int[4]; // 4 size array
+ 
+//         // accepting value from input
+//         for (i = 0; i < 4; i++)
+//         {
+//             Console.Write("Enter a number: ");
+//             // store value in an array
+//             arr[i] = Convert.ToInt32(Console.ReadLine());
+//         }  
+ 
+//         Console.WriteLine("----------------");
+//         Console.WriteLine("Minimum number: " + arr.Min());
+//         Console.WriteLine("Maximum number: " + arr.Max());
+//         Console.WriteLine("Difference between Max and Min: " + (arr.Max() - arr.Min()));
+//     }
+// }
+
+
+// Task 1 Practice 6
+    class Program16
+    {
+        static void Main(string[] args)
         {
-            if (j % 2 == 0)
-                even += arr[j];
-            else
-                odd += arr[j];
-        }
+            int i;
+            int[] arr = new int[6]; // 4 size array
  
-        Console.WriteLine("Even index positions" + " sum: " + even);                            
-        Console.WriteLine("Odd index positions " + "sum: " + odd);
+            // accepting value from input
+            for (i = 0; i < 6; i++)
+            {
+                Console.Write("Enter a number: ");
+                // store value in an array
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }             
+            
+            foreach (var item in arr)
+            {
+                Console.Write(item.ToString() + " ");
+            }
+            Console.WriteLine(test(arr));
+        }
+        public static string test(int[] arr)
+        {
+            var pos = arr.Where(n => n > 0);
+            var neg = arr.Where(n => n < 0);
+            return "\nNumber of positive digits: " + pos.Count() + "\nNumber of negative digits: " + neg.Count();
+        }
+    }
+
+
+// Task 2 Practice 6
+public class Point
+{
+    public double x, y;
+ 
+    public Point(double x, double y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+ 
+    // Method used to display X and Y coordinates of a point
+    public static void displayPoint(Point p)
+    {
+        Console.WriteLine("(" + p.x + ", " + p.y + ")");
     }
 }
-
-
-// Task 3 Practice 5  
-public class Program15 {
-
-    public static void Main()
+public class Test
+{
+    public static Point lineLineIntersection(Point A, Point B, Point C, Point D)
     {
-        int i;
-        int[] arr = new int[4]; // 4 size array
+        // Line AB represented as a1x + b1y = c1
+        double a1 = B.y - A.y;
+        double b1 = A.x - B.x;
+        double c1 = a1 * (A.x) + b1 * (A.y);
  
-        // accepting value from input
-        for (i = 0; i < 4; i++)
+        // Line CD represented as a2x + b2y = c2
+        double a2 = D.y - C.y;
+        double b2 = C.x - D.x;
+        double c2 = a2 * (C.x) + b2 * (C.y);
+ 
+        double determinant = a1 * b2 - a2 * b1;
+ 
+        if (determinant == 0)
         {
-            Console.Write("Enter a number: ");
-            // store value in an array
-            arr[i] = Convert.ToInt32(Console.ReadLine());
-        }  
+            // The lines are parallel
+            return new Point(double.MaxValue, double.MaxValue);
+        }
+        else
+        {
+            double x = (b2 * c1 - b1 * c2) / determinant;
+            double y = (a1 * c2 - a2 * c1) / determinant;
+            return new Point(x, y);
+        }
+    }
+    // Driver method
+    public static void Main(string[] args)
+    {
+        Console.Write("k1: ");
+        int k1 = int.Parse(Console.ReadLine());
+        Console.Write("b1: ");
+        int b1 = int.Parse(Console.ReadLine());
+        Console.Write("k2: ");
+        int k2 = int.Parse(Console.ReadLine());
+        Console.Write("b2: ");
+        int b2 = int.Parse(Console.ReadLine());        
+             
+        Random rnd = new Random();
+        int x_A = rnd.Next(1000);
+        int x_B = rnd.Next(1000);
+        int x_C = rnd.Next(1000);
+        int x_D = rnd.Next(1000);
+
+        int y_A = k1 * x_A + b1;
+        int y_B = k1 * x_B + b1;
+        int y_C = k2 * x_C + b2;
+        int y_D = k2 * x_D + b2;
+        
+        Point A = new Point(x_A, y_A);
+        Point B = new Point(x_B, y_B);
+        Point C = new Point(x_C, y_C);
+        Point D = new Point(x_D, y_D);
  
-        Console.WriteLine("----------------");
-        Console.WriteLine("Minimum number: " + arr.Min());
-        Console.WriteLine("Maximum number: " + arr.Max());
-        Console.WriteLine("Difference between Max and Min: " + (arr.Max() - arr.Min()));
+        Point intersection = lineLineIntersection(A, B, C, D);
+ 
+        if (intersection.x == double.MaxValue && intersection.y == double.MaxValue)
+        {
+            Console.WriteLine("The given lines AB and CD are parallel.");
+        }
+ 
+        else
+        {
+           Console.Write("The intersection of the given lines AB " + "and CD: ");
+           Point.displayPoint(intersection);
+        }
     }
 }
