@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GeekBrainsPractice\\3_programming_languages\\6\\homework\\CSharp_code\\homework.csproj",
+      "projectUniqueName": "C:\\GeekBrainsPractice\\3_programming_languages\\7\\homework\\CSharp_code\\homework.csproj",
       "projectName": "homework",
-      "projectPath": "C:\\GeekBrainsPractice\\3_programming_languages\\6\\homework\\CSharp_code\\homework.csproj",
+      "projectPath": "C:\\GeekBrainsPractice\\3_programming_languages\\7\\homework\\CSharp_code\\homework.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\GeekBrainsPractice\\3_programming_languages\\6\\homework\\CSharp_code\\obj\\",
+      "outputPath": "C:\\GeekBrainsPractice\\3_programming_languages\\7\\homework\\CSharp_code\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"

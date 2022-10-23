@@ -279,7 +279,7 @@
 // internal class Program10 {  
 //     private static void Main(string[] args)  
 //     {       
-        
+
 //         Console.Write("Enter a base: "); 
 //         int i = int.Parse(Console.ReadLine()); 
 
@@ -304,7 +304,7 @@
 
 // // Task 2 Practice 4                   
 // internal class Program11 { 
-      
+
 //     private static void Main(string[] args) 
 //     {  
 //         int n, sum = 0, m;         
@@ -329,7 +329,7 @@
 //         {
 //             int i;
 //             int[] arr = new int[8]; // 8 size array
- 
+
 //             // accepting value from input
 //             for (i = 0; i < 8; i++)
 //             {
@@ -339,13 +339,13 @@
 
 //             }
 //             Console.WriteLine("\n");
-            
+
 //             // print the value on console
 //             for (i = 0; i < 8; i++)
 //             {
 //                 {  
 //                     int sum = 0, m;   
-  
+
 //                     while(arr[i] > 0)      
 //                         {      
 //                             m = arr[i] % 10;      
@@ -369,7 +369,7 @@
 //         {                
 //              int i;
 //              int[] arr = new int[4]; // 4 size array
- 
+
 //              // accepting value from input
 //              for (i = 0; i < 4; i++)
 //              {
@@ -395,12 +395,12 @@
 
 // // Task 2 Practice 5  
 // public class Program14 {
-     
+
 //     public static void Main()
 //     {
 //         int i;
 //         int[] arr = new int[4]; // 4 size array
- 
+
 //         // accepting value from input
 //         for (i = 0; i < 4; i++)
 //         {
@@ -410,7 +410,7 @@
 //         }       
 
 //         int even = 0, odd = 0;
- 
+
 //         // loop to find even, odd sum
 //         for (int j = 0; j < arr.Length; j++)
 //         {
@@ -419,7 +419,7 @@
 //             else
 //                 odd += arr[j];
 //         }
- 
+
 //         Console.WriteLine("Even index positions" + " sum: " + even);                            
 //         Console.WriteLine("Odd index positions " + "sum: " + odd);
 //     }
@@ -433,7 +433,7 @@
 //     {
 //         int i;
 //         int[] arr = new int[4]; // 4 size array
- 
+
 //         // accepting value from input
 //         for (i = 0; i < 4; i++)
 //         {
@@ -441,7 +441,7 @@
 //             // store value in an array
 //             arr[i] = Convert.ToInt32(Console.ReadLine());
 //         }  
- 
+
 //         Console.WriteLine("----------------");
 //         Console.WriteLine("Minimum number: " + arr.Min());
 //         Console.WriteLine("Maximum number: " + arr.Max());
@@ -450,121 +450,211 @@
 // }
 
 
-// Task 1 Practice 6
-    class Program16
-    {
-        static void Main(string[] args)
-        {
-            int i;
-            int[] arr = new int[6]; // 4 size array
- 
-            // accepting value from input
-            for (i = 0; i < 6; i++)
-            {
-                Console.Write("Enter a number: ");
-                // store value in an array
-                arr[i] = Convert.ToInt32(Console.ReadLine());
-            }             
-            
-            foreach (var item in arr)
-            {
-                Console.Write(item.ToString() + " ");
-            }
-            Console.WriteLine(test(arr));
-        }
-        public static string test(int[] arr)
-        {
-            var pos = arr.Where(n => n > 0);
-            var neg = arr.Where(n => n < 0);
-            return "\nNumber of positive digits: " + pos.Count() + "\nNumber of negative digits: " + neg.Count();
-        }
-    }
+// // Task 1 Practice 6
+//     class Program16
+//     {
+//         static void Main(string[] args)
+//         {
+//             int i;
+//             int[] arr = new int[6]; // 4 size array
+
+//             // accepting value from input
+//             for (i = 0; i < 6; i++)
+//             {
+//                 Console.Write("Enter a number: ");
+//                 // store value in an array
+//                 arr[i] = Convert.ToInt32(Console.ReadLine());
+//             }             
+
+//             foreach (var item in arr)
+//             {
+//                 Console.Write(item.ToString() + " ");
+//             }
+//             Console.WriteLine(test(arr));
+//         }
+//         public static string test(int[] arr)
+//         {
+//             var pos = arr.Where(n => n > 0);
+//             var neg = arr.Where(n => n < 0);
+//             return "\nNumber of positive digits: " + pos.Count() + "\nNumber of negative digits: " + neg.Count();
+//         }
+//     }
 
 
-// Task 2 Practice 6
-public class Point
+// // Task 2 Practice 6
+// public class Point
+// {
+//     public double x, y;
+
+//     public Point(double x, double y)
+//     {
+//         this.x = x;
+//         this.y = y;
+//     }
+
+//     // Method used to display X and Y coordinates of a point
+//     public static void displayPoint(Point p)
+//     {
+//         Console.WriteLine("(" + p.x + ", " + p.y + ")");
+//     }
+// }
+// public class Test
+// {
+//     public static Point lineLineIntersection(Point A, Point B, Point C, Point D)
+//     {
+//         // Line AB represented as a1x + b1y = c1
+//         double a1 = B.y - A.y;
+//         double b1 = A.x - B.x;
+//         double c1 = a1 * (A.x) + b1 * (A.y);
+
+//         // Line CD represented as a2x + b2y = c2
+//         double a2 = D.y - C.y;
+//         double b2 = C.x - D.x;
+//         double c2 = a2 * (C.x) + b2 * (C.y);
+
+//         double determinant = a1 * b2 - a2 * b1;
+
+//         if (determinant == 0)
+//         {
+//             // The lines are parallel
+//             return new Point(double.MaxValue, double.MaxValue);
+//         }
+//         else
+//         {
+//             double x = (b2 * c1 - b1 * c2) / determinant;
+//             double y = (a1 * c2 - a2 * c1) / determinant;
+//             return new Point(x, y);
+//         }
+//     }
+//     // Driver method
+//     public static void Main(string[] args)
+//     {
+//         Console.Write("k1: ");
+//         int k1 = int.Parse(Console.ReadLine());
+//         Console.Write("b1: ");
+//         int b1 = int.Parse(Console.ReadLine());
+//         Console.Write("k2: ");
+//         int k2 = int.Parse(Console.ReadLine());
+//         Console.Write("b2: ");
+//         int b2 = int.Parse(Console.ReadLine());        
+
+//         Random rnd = new Random();
+//         int x_A = rnd.Next(1000);
+//         int x_B = rnd.Next(1000);
+//         int x_C = rnd.Next(1000);
+//         int x_D = rnd.Next(1000);
+
+//         int y_A = k1 * x_A + b1;
+//         int y_B = k1 * x_B + b1;
+//         int y_C = k2 * x_C + b2;
+//         int y_D = k2 * x_D + b2;
+
+//         Point A = new Point(x_A, y_A);
+//         Point B = new Point(x_B, y_B);
+//         Point C = new Point(x_C, y_C);
+//         Point D = new Point(x_D, y_D);
+
+//         Point intersection = lineLineIntersection(A, B, C, D);
+
+//         if (intersection.x == double.MaxValue && intersection.y == double.MaxValue)
+//         {
+//             Console.WriteLine("The given lines AB and CD are parallel.");
+//         }
+
+//         else
+//         {
+//            Console.Write("The intersection of the given lines AB " + "and CD: ");
+//            Point.displayPoint(intersection);
+//         }
+//     }
+// }
+
+
+// Task 1 Practice 7
+internal class Program17
 {
-    public double x, y;
- 
-    public Point(double x, double y)
+    private static void Main(string[] args)
     {
-        this.x = x;
-        this.y = y;
-    }
- 
-    // Method used to display X and Y coordinates of a point
-    public static void displayPoint(Point p)
-    {
-        Console.WriteLine("(" + p.x + ", " + p.y + ")");
+        Console.Write("m-dimension: ");
+        int m = int.Parse(Console.ReadLine());
+        Console.Write("n-dimension: ");
+        int n = int.Parse(Console.ReadLine());
+    
+        Random rnd = new Random();
+        int[,] arr = new int[m, n];
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < arr.GetLength(1); j++)
+            {
+                arr[i, j] = rnd.Next(1, 10);
+                Console.WriteLine("[{0}, {1}] = {2}", i, j, arr[i, j]);
+            }
+        }
     }
 }
-public class Test
-{
-    public static Point lineLineIntersection(Point A, Point B, Point C, Point D)
-    {
-        // Line AB represented as a1x + b1y = c1
-        double a1 = B.y - A.y;
-        double b1 = A.x - B.x;
-        double c1 = a1 * (A.x) + b1 * (A.y);
- 
-        // Line CD represented as a2x + b2y = c2
-        double a2 = D.y - C.y;
-        double b2 = C.x - D.x;
-        double c2 = a2 * (C.x) + b2 * (C.y);
- 
-        double determinant = a1 * b2 - a2 * b1;
- 
-        if (determinant == 0)
-        {
-            // The lines are parallel
-            return new Point(double.MaxValue, double.MaxValue);
-        }
-        else
-        {
-            double x = (b2 * c1 - b1 * c2) / determinant;
-            double y = (a1 * c2 - a2 * c1) / determinant;
-            return new Point(x, y);
-        }
-    }
-    // Driver method
-    public static void Main(string[] args)
-    {
-        Console.Write("k1: ");
-        int k1 = int.Parse(Console.ReadLine());
-        Console.Write("b1: ");
-        int b1 = int.Parse(Console.ReadLine());
-        Console.Write("k2: ");
-        int k2 = int.Parse(Console.ReadLine());
-        Console.Write("b2: ");
-        int b2 = int.Parse(Console.ReadLine());        
-             
-        Random rnd = new Random();
-        int x_A = rnd.Next(1000);
-        int x_B = rnd.Next(1000);
-        int x_C = rnd.Next(1000);
-        int x_D = rnd.Next(1000);
 
-        int y_A = k1 * x_A + b1;
-        int y_B = k1 * x_B + b1;
-        int y_C = k2 * x_C + b2;
-        int y_D = k2 * x_D + b2;
+
+// Task 2 Practice 7
+internal class Program18
+{
+    private static void Main(string[] args)
+    {
+        int[,] array2D = new int[,] {{1, 4, 7, 2}, {5, 9, 2, 3}, {8, 4, 2, 4}};
         
-        Point A = new Point(x_A, y_A);
-        Point B = new Point(x_B, y_B);
-        Point C = new Point(x_C, y_C);
-        Point D = new Point(x_D, y_D);
- 
-        Point intersection = lineLineIntersection(A, B, C, D);
- 
-        if (intersection.x == double.MaxValue && intersection.y == double.MaxValue)
+        Console.Write("m-position: ");
+        int m = int.Parse(Console.ReadLine());
+        Console.Write("n-position: ");
+        int n = int.Parse(Console.ReadLine());
+
+        try
+            {
+                int x = array2D[m, n];
+                Console.WriteLine("Value of the element: " + x);
+            }
+        
+        catch
+            {
+                Console.WriteLine("There is no element in this position");
+            }
+    }
+}
+
+
+// Task 3 Practice 7
+class Program19
+{
+    static void Main(string[] args)
+    {
+        Console.Write("2D-array dimension: ");
+        int n = int.Parse(Console.ReadLine());
+        
+        int[,] arr = new int[n, n];
+        Random rand = new Random();
+        int[] summ = new int[n];
+        
+        for (int i = 0; i < n; i++)
         {
-            Console.WriteLine("The given lines AB and CD are parallel.");
+            for (int j = 0; j < n; j++)
+            {
+                arr[i, j] = rand.Next(0, 10); // random numbers      
+            }
         }
- 
-        else
+        Console.WriteLine("2D-array:");
+        
+        for (int i = 0; i < n; i++)
         {
-           Console.Write("The intersection of the given lines AB " + "and CD: ");
-           Point.displayPoint(intersection);
+            for (int j = 0; j < n; j++)
+            {                
+                Console.Write(arr[i, j]);  // print an array
+                summ[i] += arr[j, i];      // calculate the sum
+            } 
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+        Console.WriteLine("Avg of columns:");
+        foreach (double elem in summ)
+        {            
+            Console.WriteLine(elem / n); // return an average
         }
     }
 }
