@@ -570,91 +570,312 @@
 // }
 
 
-// Task 1 Practice 7
-internal class Program17
-{
-    private static void Main(string[] args)
-    {
-        Console.Write("m-dimension: ");
-        int m = int.Parse(Console.ReadLine());
-        Console.Write("n-dimension: ");
-        int n = int.Parse(Console.ReadLine());
-    
-        Random rnd = new Random();
-        int[,] arr = new int[m, n];
-        for (int i = 0; i < arr.GetLength(0); i++)
-        {
-            for (int j = 0; j < arr.GetLength(1); j++)
-            {
-                arr[i, j] = rnd.Next(1, 10);
-                Console.WriteLine("[{0}, {1}] = {2}", i, j, arr[i, j]);
-            }
-        }
-    }
-}
+// // Task 1 Practice 7
+// internal class Program17
+// {
+//     private static void Main(string[] args)
+//     {
+//         Console.Write("m-dimension: ");
+//         int m = int.Parse(Console.ReadLine());
+//         Console.Write("n-dimension: ");
+//         int n = int.Parse(Console.ReadLine());
+
+//         Random rnd = new Random();
+//         int[,] arr = new int[m, n];
+//         for (int i = 0; i < arr.GetLength(0); i++)
+//         {
+//             for (int j = 0; j < arr.GetLength(1); j++)
+//             {
+//                 arr[i, j] = rnd.Next(1, 10);
+//                 Console.WriteLine("[{0}, {1}] = {2}", i, j, arr[i, j]);
+//             }
+//         }
+//     }
+// }
 
 
-// Task 2 Practice 7
-internal class Program18
-{
-    private static void Main(string[] args)
-    {
-        int[,] array2D = new int[,] {{1, 4, 7, 2}, {5, 9, 2, 3}, {8, 4, 2, 4}};
-        
-        Console.Write("m-position: ");
-        int m = int.Parse(Console.ReadLine());
-        Console.Write("n-position: ");
-        int n = int.Parse(Console.ReadLine());
+// // Task 2 Practice 7
+// internal class Program18
+// {
+//     private static void Main(string[] args)
+//     {
+//         int[,] array2D = new int[,] {{1, 4, 7, 2}, {5, 9, 2, 3}, {8, 4, 2, 4}};
 
-        try
-            {
-                int x = array2D[m, n];
-                Console.WriteLine("Value of the element: " + x);
-            }
-        
-        catch
-            {
-                Console.WriteLine("There is no element in this position");
-            }
-    }
-}
+//         Console.Write("m-position: ");
+//         int m = int.Parse(Console.ReadLine());
+//         Console.Write("n-position: ");
+//         int n = int.Parse(Console.ReadLine());
+
+//         try
+//             {
+//                 int x = array2D[m, n];
+//                 Console.WriteLine("Value of the element: " + x);
+//             }
+
+//         catch
+//             {
+//                 Console.WriteLine("There is no element in this position");
+//             }
+//     }
+// }
 
 
 // Task 3 Practice 7
-class Program19
-{
-    static void Main(string[] args)
-    {
-        Console.Write("2D-array dimension: ");
-        int n = int.Parse(Console.ReadLine());
+// class Program19
+// {
+//     static void Main(string[] args)
+//     {
+//         Console.Write("2D-array dimension: ");
+//         int n = int.Parse(Console.ReadLine());
+
+//         int[,] arr = new int[n, n];
+//         Random rand = new Random();
+//         int[] summ = new int[n];
+
+//         for (int i = 0; i < n; i++)
+//         {
+//             for (int j = 0; j < n; j++)
+//             {
+//                 arr[i, j] = rand.Next(0, 10); // random numbers      
+//             }
+//         }
+//         Console.WriteLine("2D-array:");
+
+//         for (int i = 0; i < n; i++)
+//         {
+//             for (int j = 0; j < n; j++)
+//             {                
+//                 Console.Write(arr[i, j]);  // print an array
+//                 summ[i] += arr[j, i];      // calculate the sum
+//             } 
+//             Console.WriteLine();
+//         }
+//         Console.WriteLine();
+//         Console.WriteLine("Avg of columns:");
+//         foreach (double elem in summ)
+//         {            
+//             Console.WriteLine(elem / n); // return an average
+//         }
+//     }
+// }
+
+
+// // Task 1 Practice 8
+// class Program20 { 
+//     public static int[] GetRow(int[,] matrix, int row)
+//     {
+//         var rowLength = matrix.GetLength(1);
+//         var rowVector = new int[rowLength];
+//         for (var i = 0; i < rowLength; i++)
+//             rowVector[i] = matrix[row, i];
+
+//         return rowVector;
+//     }
+
+//     static int sortRowWise(int [,]m)
+//     {
+//         // One by one sort individual rows
+//         for (int i = 0;
+//                  i < m.GetLength(0); i++)
+//         {
+//             for (int k = 0;
+//                      k < m.GetLength(1); k++)
+//                 for (int j = 0;
+//                          j < m.GetLength(1) - k - 1; j++)
+//                     if (m[i, j] < m[i, j + 1])
+//                     {
+//                         // swap temp and arr[i]
+//                         int temp = m[i, j];
+//                         m[i, j] = m[i, j + 1];
+//                         m[i, j + 1] = temp;
+//                     }
+//         }
+
+//         // Printing the sorted matrix
+//         for (int i = 0;
+//                  i < m.GetLength(0); i++)
+//         {
+//             for (int j = 0;
+//                      j < m.GetLength(1); j++)
+
+//         Console.Write(m[i, j] + " ");
+//         Console.WriteLine();
+//         }
+
+//   return 0;
+// }
+//     // Driver code
+//     public static void Main(String []args)
+//     {
+//         int [,]m = {{1, 4, 7, 2},
+//                     {5, 9, 2, 3},
+//                     {8, 4, 2, 4}};                
+//         sortRowWise(m);
+//     }
+// }
+
+
+// // Task 2 Practice 8
+// class Program21 {
+
+//     // Get the size m and n
+//     static int m = 4;
+//     static int n = 4;
+
+//     // Function to calculate sum of each row
+//     static void row_sum(int[, ] arr)
+//     {
+
+//         int i, j, sum = 0;
+//         var numbers = new List<int>();
+//         Console.Write("\nFinding Sum of each row:\n\n");
+
+//         // finding the row sum
+//         for (i = 0; i < m; ++i) {
+//             for (j = 0; j < n; ++j) {
+
+//                 // Add the element
+//                 sum = sum + arr[i, j];
+//             }
+
+//             // Print the row sum
+//             Console.WriteLine("Sum of the row " + i + " = " + sum);        
+//             numbers.Add(sum);  
+//             // Reset the sum
+//             sum = 0;
+//         }
+
+//         var index = numbers.Select((item, index) => (item, index)).Min().index;
+//         Console.WriteLine("---------------------");
+//         Console.WriteLine("Row with min sum: " + index);
+//         Console.WriteLine("---------------------");
+//     }
+//     // Driver code
+//     public static void Main()
+//     {
+//         // Get the matrix elements
+//         int [,] arr = {
+//             {1, 4, 7, 2},
+//             {5, 9, 2, 3},
+//             {8, 4, 2, 4},
+//             {5, 2, 6, 7}
+//         };  
+
+//         // Get each row sum
+//         row_sum(arr);
+//     }
+// }
+
+
+// // Task 3 Practice 8
+// class Program22 {
+//     static void Main(string[] args) {
+//         int m = 2, n = 2, p = 2, q = 2, i, j;
+//         int[,] a = {{2, 4}, {3, 2}};
+//         int[,] b = {{3, 4}, {3, 3}};
+//         Console.WriteLine("Matrix a:");
+//         for (i = 0; i < m; i++) {
+//         for (j = 0; j < n; j++) {
+//             Console.Write(a[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//         }
+//         Console.WriteLine("Matrix b:");
+//         for (i = 0; i < p; i++) {
+//         for (j = 0; j < q; j++) {
+//             Console.Write(b[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//         }
+//         if(n != p) {
+//         Console.WriteLine("Matrix multiplication not possible");
+//         } else {
+//         int[,] c = new int[m, q];
+//         for (i = 0; i < m; i++) {
+//             for (j = 0; j < q; j++) {
+//                 c[i, j] = 0;
+//                 for (int k = 0; k < n; k++) {
+//                     c[i, j] += a[i, k] * b[k, j];
+//                 }
+//             }
+//         }
+//         Console.WriteLine("The product of the two matrices is: ");
+//         for (i = 0; i < m; i++) {
+//             for (j = 0; j < n; j++) {
+//                 Console.Write(c[i, j] + "\t");
+//             }
+//             Console.WriteLine();
+//         }
+//         }
+//     }
+// }
+
+
+// Task 4 Practice 8
+public class Program23 
+{  
+    public static void Main(string[] args)  
+    {  
+        // declaration of 3D array  
+        int[,,] arr = new int[2, 2, 2];
         
-        int[,] arr = new int[n, n];
-        Random rand = new Random();
-        int[] summ = new int[n];
+        // 1st layer
+        arr[0, 0, 0] = 66; 
+        arr[0, 0, 1] = 27;
+        arr[0, 1, 0] = 25; 
+        arr[0, 1, 1] = 90;
         
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                arr[i, j] = rand.Next(0, 10); // random numbers      
-            }
+        // 2nd layer
+        arr[1, 0, 0] = 34; 
+        arr[1, 0, 1] = 26;
+        arr[1, 1, 0] = 41; 
+        arr[1, 1, 1] = 55;
+
+        foreach (int i in arr) {
+            Console.Write("{0} ", i);
         }
-        Console.WriteLine("2D-array:");
-        
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {                
-                Console.Write(arr[i, j]);  // print an array
-                summ[i] += arr[j, i];      // calculate the sum
-            } 
-            Console.WriteLine();
-        }
-        Console.WriteLine();
-        Console.WriteLine("Avg of columns:");
-        foreach (double elem in summ)
-        {            
-            Console.WriteLine(elem / n); // return an average
-        }
-    }
-}
+    }  
+}  
+
+
+// // Task 5 Practice 8
+// public class Program24
+// {
+//     public static int[,] GetMatrix(int size)
+//     {
+//         var m = new int[size, size];
+//         (int x, int y) dir = (1, 0), pos = (0, 0);
+//         (int x, int y) rotate((int x, int y) d) => d.x == 0 ? (-d.y, 0) : (0, d.x);
+//         (int x, int y) step((int x, int y) p, (int x, int y) d) => (x: p.x + d.x, y: p.y + d.y);
+//         for (int count = 1; count <= size * size; count++)
+//         {
+//             m[pos.y, pos.x] = count;
+//             var p2 = step(pos, dir);
+//             try
+//             {
+//                 if (m[p2.y, p2.x] != 0) throw new IndexOutOfRangeException();
+//                 pos = p2;
+//             }
+//             catch (IndexOutOfRangeException)
+//             {
+//                 dir = rotate(dir);
+//                 pos = step(pos, dir);
+//             }
+//         }
+//         return m;      
+//     }
+//     // Driver code
+//     public static void Main()
+//     {
+//         var result = GetMatrix(4);
+//         int i, j;
+
+//         Console.WriteLine("The spiral matrix is: ");     
+//         for (i = 0; i < 4; i++) {
+//             for (j = 0; j < 4; j++) {
+//                 Console.Write(result[i, j] + "\t");
+//             }    
+//             Console.WriteLine();
+//         }
+//     }
+// }
